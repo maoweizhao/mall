@@ -1,8 +1,14 @@
-/*
- * @Author: maoweizho
- * @Description: 配置信息
- */
+
+const path = require('path')
 module.exports = {
+
+  //   配置路径别名
+  chainWebpack: config => {
+    config.resolve.alias
+      .set('@', path.resolve(__dirname, 'src'))
+      .set('@cp', path.resolve('src/components'))
+  },
+  //   配置server
   devServer: {
     host: 'localhost',
     port: 8080,
