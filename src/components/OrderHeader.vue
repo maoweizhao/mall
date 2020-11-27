@@ -1,9 +1,8 @@
 <template>
-    <div>product</div>
+    <div>orderheader</div>
 </template>
 <script>
 export default {
-
 }
 </script>
 <style scoped>

@@ -1,15 +1,20 @@
 <template>
     <div>
-      <nav-header></nav-header>
+      <!-- <nav-header></nav-header> -->
+      <NavHeader></NavHeader>
       <router-view></router-view>
-      <nav-footer></nav-footer>
+      <NavFooter></NavFooter>
     </div>
 </template>
 
 <script>
-import NavFooter from '../components/NavFooter.vue'
+import NavFooter from '@cp/NavFooter.vue'
+import NavHeader from '@cp/NavHeader.vue'
 export default {
-  components: { NavFooter }
+  components: {
+    NavFooter,
+    NavHeader
+  }
 }
 </script>
 

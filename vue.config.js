@@ -22,6 +22,8 @@ module.exports = {
           '/api': ''
         }
       }
-    }
+    },
+    // 配置自动启动浏览器
+    open: true
   }
 }
