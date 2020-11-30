@@ -38,6 +38,7 @@ export default {
     const val = this.getStorage()
     // eslint-disable-next-line camelcase
     if (item_value) {
+      if (!val[item_value]) return
       delete val[item_value][item]
     } else {
       delete val[item]
