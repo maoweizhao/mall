@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
+  // 首页
   {
     path: '/',
     name: 'home',
@@ -27,11 +28,13 @@ const routes = [
       }
     ]
   },
+  // 购物车
   {
     path: '/cart',
     name: 'cart',
     component: () => import('@/views/cart.vue')
   },
+  // 订单
   {
     path: '/order',
     name: 'order',
@@ -51,6 +54,12 @@ const routes = [
         path: 'orderPay',
         name: 'orderPay',
         component: () => import('@/views/orderPay.vue')
+      },
+      // 支付中转页
+      {
+        path: 'alipay',
+        name: 'alipay',
+        component: () => import('@/views/alipay.vue')
       }
     ]
   }
