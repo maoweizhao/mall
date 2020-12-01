@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div>
+      <NavHeader></NavHeader>
+      <router-view></router-view>
+      <NavFooter></NavFooter>
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import NavFooter from '@cp/NavFooter.vue'
+import NavHeader from '@cp/NavHeader.vue'
 export default {
-  name: 'Home',
   components: {
-    HelloWorld
+    NavFooter,
+    NavHeader
   }
 }
 </script>
+
+<style lang="sass" scoped>
+
+</style>

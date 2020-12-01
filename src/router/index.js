@@ -1,22 +1,67 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+  // 首页
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'home',
+    component: () => import('@/views/home.vue'),
+    redirect: '/index',
+    children: [
+      {
+        path: '/index',
+        name: 'index',
+        component: () => import('@/views/index.vue')
+      },
+      {
+        path: '/detail/:id',
+        name: 'detail',
+        component: () => import('@/views/detail.vue')
+      },
+      {
+        path: '/product/:id',
+        name: 'product',
+        component: () => import('@/views/product.vue')
+      }
+    ]
   },
+  // 购物车
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/cart',
+    name: 'cart',
+    component: () => import('@/views/cart.vue')
+  },
+  // 订单
+  {
+    path: '/order',
+    name: 'order',
+    component: () => import('@/views/order.vue'),
+    children: [
+      {
+        path: 'orderList',
+        name: 'orderList',
+        component: () => import('@/views/orderList.vue')
+      },
+      {
+        path: 'orderConfirm',
+        name: 'orderConfirm',
+        component: () => import('@/views/orderConfirm.vue')
+      },
+      {
+        path: 'orderPay',
+        name: 'orderPay',
+        component: () => import('@/views/orderPay.vue')
+      },
+      // 支付中转页
+      {
+        path: 'alipay',
+        name: 'alipay',
+        component: () => import('@/views/alipay.vue')
+      }
+    ]
   }
 ]
 
